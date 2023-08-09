@@ -1,0 +1,29 @@
+<!-- Your student view EJS file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+</head>
+
+<body>
+    <h1>Welcome <%= user.name %>!</h1> <!-- 顯示使用者名稱，歡迎學生 -->
+    <p>Role: <%= user.role %>
+    </p> <!-- 顯示使用者角色 -->
+    <% if (message) { %> <!-- 判斷是否有訊息要顯示 -->
+        <p>
+            <%= message %>
+        </p> <!-- 顯示相應的訊息 -->
+        <% } %>
+            <h2>Join Classroom:</h2> <!-- 顯示加入教室的標題 -->
+            <form action="/room/join" method="post"> <!-- 表單，以便學生加入教室 -->
+                <input type="text" name="roomCode" placeholder="Enter classroom code" required> <!-- 輸入教室代碼的輸入框，必填項目 -->
+                <button type="submit">Join</button> <!-- 送出表單的按鈕 -->
+            </form>
+
+            <a href="/logout"><span>登出</span></a>
+</body>
+
+</html>

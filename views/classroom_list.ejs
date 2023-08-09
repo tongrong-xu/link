@@ -1,0 +1,22 @@
+<!-- Your classroom_list view EJS file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom List</title>
+</head>
+
+<body>
+    <h1>Your Classrooms:</h1> <!-- 顯示教室列表標題 -->
+    <ul>
+        <% classrooms.forEach((classroom)=> { %> <!-- 使用 forEach 迴圈列舉教室 -->
+            <li><a href="/room/<%= classroom._id %>">
+                    <%= classroom.code %>
+                </a></li> <!-- 顯示教室代碼並連結到對應教室頁面 -->
+            <% }); %>
+    </ul>
+</body>
+
+</html>

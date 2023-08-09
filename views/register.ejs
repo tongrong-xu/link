@@ -1,0 +1,27 @@
+<h1>register</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <br><br>
+    <input type="number" name="id" placeholder="Enter ID" >
+    <br><br>
+    <input type="file" name="image" required>
+    <br><br>
+    <select name="role" required>
+        <option value="student">學生</option>
+        <option value="teacher">教師</option>
+    </select>
+    <br><br>
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <br><br>
+    <input type="submit" value="Register">
+    <br><br>
+</form>
+
+<% if (typeof message !=='undefined' ) { %>
+    <p style="color: gray;">
+        <%= message %>
+    </p>
+    <% } %>

@@ -1,0 +1,30 @@
+<!-- Your classroom view EJS file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom</title>
+</head>
+
+<body>
+  <h1>Welcome to Classroom <%= room.code %>
+  </h1> <!-- 在標題中顯示教室代碼 -->
+  <% if(isTeacher) { %> <!-- 判斷是否為教師 -->
+    <p>This is your classroom as a teacher.</p> <!-- 如果是教師，顯示相應的訊息 -->
+    <% } else { %> <!-- 否則為學生 -->
+      <p>You are a student in this classroom.</p> <!-- 如果是學生，顯示相應的訊息 -->
+      <% } %>
+
+        <h2>Students:</h2> <!-- 顯示學生清單標題 -->
+        <ul>
+          <% students.forEach((student)=> { %> <!-- 使用 forEach 迴圈列舉學生 -->
+            <li>
+              <%= student.name %>
+            </li> <!-- 顯示學生名稱 -->
+            <% }); %>
+        </ul>
+</body>
+
+</html>

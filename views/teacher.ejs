@@ -1,0 +1,12 @@
+<!-- views/teacher.ejs -->
+<h1>Teacher</h1>
+
+<a href="/logout"><span>登出</span></a>
+
+<h1>Welcome <%= teacher.name %>!</h1> <!-- 顯示使用者名稱，歡迎學生 -->
+<p>Role: <%= teacher.role %>
+
+<h2>創建教室</h2>
+<form action="/teacher/createClassroom" method="POST">
+  <button type="submit">創建教室</button>
+</form>
